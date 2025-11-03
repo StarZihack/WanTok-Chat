@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Purchase Tokens - WanTok</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <!-- Purchase Tokens Page -->
+    <div class="purchase-page">
+      <header class="page-header">
+        <button id="backFromPurchase" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+        <h1><i class="fas fa-coins"></i> Purchase Tokens</h1>
+        <div class="token-display">
+          <i class="fas fa-coins"></i>
+          <span id="currentTokens">0</span>
+        </div>
+      </header>
+
+      <div class="purchase-content">
+        <div class="purchase-info">
+          <h2>Get More Tokens</h2>
+          <p>Purchase tokens to unlock premium features and enhance your chat experience!</p>
+        </div>
+
+        <!-- Token Packages -->
+        <div class="token-packages">
+          <!-- Basic Package -->
+          <div class="token-package" data-tokens="100" data-price="4.99">
+            <div class="package-badge">Basic</div>
+            <div class="package-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="package-tokens">
+              <span class="token-amount">100</span>
+              <span class="token-label">Tokens</span>
+            </div>
+            <div class="package-price">$4.99</div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> Filter by Gender</li>
+              <li><i class="fas fa-check"></i> Filter by Country</li>
+              <li><i class="fas fa-check"></i> ~16 minutes of filtered chats</li>
+            </ul>
+            <button class="purchase-btn" data-package="basic">
+              <i class="fas fa-shopping-cart"></i> Purchase
+            </button>
+          </div>
+
+          <!-- Popular Package -->
+          <div class="token-package popular" data-tokens="500" data-price="19.99">
+            <div class="package-badge popular-badge">Most Popular</div>
+            <div class="package-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <div class="package-tokens">
+              <span class="token-amount">500</span>
+              <span class="token-label">Tokens</span>
+            </div>
+            <div class="package-price">
+              $19.99
+              <span class="package-save">Save 17%</span>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> Everything in Basic</li>
+              <li><i class="fas fa-check"></i> ~83 minutes of filtered chats</li>
+              <li><i class="fas fa-check"></i> Best value for money</li>
+            </ul>
+            <button class="purchase-btn popular-btn" data-package="popular">
+              <i class="fas fa-shopping-cart"></i> Purchase
+            </button>
+          </div>
+
+          <!-- Premium Package -->
+          <div class="token-package" data-tokens="1000" data-price="34.99">
+            <div class="package-badge">Premium</div>
+            <div class="package-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <div class="package-tokens">
+              <span class="token-amount">1000</span>
+              <span class="token-label">Tokens</span>
+            </div>
+            <div class="package-price">
+              $34.99
+              <span class="package-save">Save 30%</span>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> Everything in Basic</li>
+              <li><i class="fas fa-check"></i> ~166 minutes of filtered chats</li>
+              <li><i class="fas fa-check"></i> Maximum savings</li>
+            </ul>
+            <button class="purchase-btn" data-package="premium">
+              <i class="fas fa-shopping-cart"></i> Purchase
+            </button>
+          </div>
+        </div>
+
+        <!-- Payment Info -->
+        <div class="payment-info">
+          <h3><i class="fas fa-lock"></i> Secure Payment</h3>
+          <p>All payments are processed securely. We accept major credit cards and PayPal.</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/socket-shared.js"></script>
+  <script src="/assets/js/purchase.js"></script>
+</body>
+</html>

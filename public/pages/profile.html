@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Profile - WanTok</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <!-- Profile Page -->
+    <div id="profile" class="profile-page">
+      <header class="profile-header">
+        <button id="backToHome" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+        <h1>Profile</h1>
+      </header>
+
+      <div class="profile-content">
+        <!-- Profile Avatar Section -->
+        <div class="profile-avatar-section">
+          <div class="avatar-container">
+            <div class="avatar-circle">
+              <i class="fas fa-user"></i>
+            </div>
+            <button class="edit-avatar-btn"><i class="fas fa-camera"></i></button>
+          </div>
+          <div class="profile-name-section">
+            <h2 id="profileFullName">John Doe</h2>
+            <button class="edit-name-btn" data-field="fullName"><i class="fas fa-edit"></i></button>
+          </div>
+          <div class="profile-username-section">
+            <p id="profileUsername">@johndoe</p>
+            <button class="edit-username-btn" data-field="username"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Profile Stats -->
+        <div class="profile-stats">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-comments"></i></div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Total Chats</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-value">0h</div>
+            <div class="stat-label">Time Spent</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-coins"></i></div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Tokens Earned</div>
+          </div>
+        </div>
+
+        <!-- Profile Information -->
+        <div class="profile-settings">
+          <h3><i class="fas fa-user"></i> Personal Information</h3>
+
+          <div class="setting-item view-only">
+            <div class="setting-info">
+              <i class="fas fa-venus-mars"></i>
+              <div>
+                <div class="setting-title">Gender</div>
+                <div class="setting-desc" id="profileGender">Not specified</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-birthday-cake"></i>
+              <div>
+                <div class="setting-title">Age</div>
+                <div class="setting-desc" id="profileAge">25 years old (DOB: 01/01/2000)</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="age"><i class="fas fa-edit"></i></button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-globe"></i>
+              <div>
+                <div class="setting-title">Country</div>
+                <div class="setting-desc" id="profileCountry">Not specified</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="country"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Account Settings -->
+        <div class="profile-settings">
+          <h3><i class="fas fa-cog"></i> Account Settings</h3>
+
+          <div class="setting-item view-only">
+            <div class="setting-info">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <div class="setting-title">Email</div>
+                <div class="setting-desc" id="profileEmail">guest@example.com</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-lock"></i>
+              <div>
+                <div class="setting-title">Password</div>
+                <div class="setting-desc">Change your password</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="password"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Preferences -->
+        <div class="profile-preferences">
+          <h3><i class="fas fa-sliders-h"></i> Preferences</h3>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-bell"></i>
+              <div>
+                <div class="preference-title">Notifications</div>
+                <div class="preference-desc">Enable push notifications</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="notificationsToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-volume-up"></i>
+              <div>
+                <div class="preference-title">Sound Effects</div>
+                <div class="preference-desc">Chat notification sounds</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="soundToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-eye-slash"></i>
+              <div>
+                <div class="preference-title">Private Mode</div>
+                <div class="preference-desc">Hide your online status</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="privateModeToggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+
+        <!-- Profile Bottom Banner Ad -->
+        <div class="ad-banner-container ad-profile-banner">
+          <div class="ad-label">Advertisement</div>
+          <div class="adsterra-banner">
+            <div class="ad-placeholder">
+              <i class="fas fa-ad"></i>
+              <p>728x90 Banner Ad</p>
+              <small>Adsterra Profile Banner</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Edit Field</h3>
+          <button class="modal-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label id="modalLabel">Value</label>
+            <input type="text" id="modalInput" class="form-input" placeholder="Enter value">
+            <input type="text" id="searchInput" class="form-input search-input" placeholder="Search..." style="display: none;">
+            <select id="modalSelect" class="form-select" style="display: none;" size="8"></select>
+            <input type="text" id="dateInput" class="form-input date-manual-input" placeholder="MM/DD/YYYY" maxlength="10" style="display: none;">
+            <div id="customCalendar" class="custom-calendar" style="display: none;">
+              <div class="calendar-header">
+                <button type="button" class="calendar-nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <div class="calendar-selectors">
+                  <select id="calendarMonthSelect" class="calendar-select" size="1"></select>
+                  <select id="calendarYearSelect" class="calendar-select" size="1"></select>
+                </div>
+                <button type="button" class="calendar-nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              <div class="calendar-weekdays">
+                <div class="calendar-weekday">Su</div>
+                <div class="calendar-weekday">Mo</div>
+                <div class="calendar-weekday">Tu</div>
+                <div class="calendar-weekday">We</div>
+                <div class="calendar-weekday">Th</div>
+                <div class="calendar-weekday">Fr</div>
+                <div class="calendar-weekday">Sa</div>
+              </div>
+              <div class="calendar-days" id="calendarDays"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn cancel-btn">Cancel</button>
+          <button class="modal-btn save-btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/socket-shared.js"></script>
+  <script src="/assets/js/profile.js"></script>
+</body>
+</html>

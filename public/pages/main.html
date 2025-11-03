@@ -1,0 +1,759 @@
+<!-- public/index.html (Full file - structure optimized for overlays) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WanTok</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Google AdSense Test -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-google-adsense-test"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <!-- Home Page (Rewards & Token System Only) -->
+    <div id="home" class="home-page">
+      <header class="home-header">
+        <div class="logo">
+          <i class="fas fa-comments"></i>
+          <span>WanTok</span>
+        </div>
+        <div class="header-right">
+          <div class="online-users-badge" onclick="window.location.href='/online-users'" style="cursor: pointer;" title="View Online Users">
+            <i class="fas fa-circle"></i>
+            <span id="onlineCount">0</span>
+          </div>
+          <div class="token-display" onclick="window.location.href='/purchase'" style="cursor: pointer;" title="Purchase Tokens">
+            <i class="fas fa-coins"></i>
+            <span id="tokenCount">0</span>
+          </div>
+          <button id="profileBtn" class="profile-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+      </header>
+
+      <div class="home-content">
+        <!-- Match Filters -->
+        <div class="match-filters">
+          <button class="filter-toggle-btn" id="filterToggleBtn">
+            <i class="fas fa-filter"></i>
+            <span>Match Filters</span>
+            <span class="filter-cost-badge"><i class="fas fa-coins"></i> 1 token/sec/filter</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </button>
+          <div class="filter-content" id="filterContent">
+            <div class="filter-grid">
+              <div class="filter-item">
+                <label for="genderFilter"><i class="fas fa-venus-mars"></i> Gender Preference</label>
+                <div class="custom-dropdown" id="genderDropdown">
+                  <div class="dropdown-selected" id="genderSelected">
+                    <span>Any Gender</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu" id="genderMenu">
+                    <div class="dropdown-options" id="genderOptions">
+                      <div class="dropdown-option" data-value="any">
+                        <i class="fas fa-users"></i>
+                        <span>Any Gender</span>
+                      </div>
+                      <div class="dropdown-option" data-value="Male">
+                        <i class="fas fa-mars"></i>
+                        <span>Male</span>
+                      </div>
+                      <div class="dropdown-option" data-value="Female">
+                        <i class="fas fa-venus"></i>
+                        <span>Female</span>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="genderFilter" value="any">
+                </div>
+              </div>
+              <div class="filter-item">
+                <label for="countryFilter"><i class="fas fa-globe"></i> Country Preference</label>
+                <div class="custom-dropdown" id="countryDropdown">
+                  <div class="dropdown-selected" id="countrySelected">
+                    <span>Any Country</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu" id="countryMenu">
+                    <input type="text" class="dropdown-search" id="countrySearch" placeholder="Search countries...">
+                    <div class="dropdown-options" id="countryOptions">
+                      <div class="dropdown-option" data-value="any">Any Country</div>
+                      <div class="dropdown-option" data-value="Afghanistan">🇦🇫 Afghanistan</div>
+                      <div class="dropdown-option" data-value="Albania">🇦🇱 Albania</div>
+                      <div class="dropdown-option" data-value="Algeria">🇩🇿 Algeria</div>
+                      <div class="dropdown-option" data-value="Andorra">🇦🇩 Andorra</div>
+                      <div class="dropdown-option" data-value="Angola">🇦🇴 Angola</div>
+                      <div class="dropdown-option" data-value="Antigua and Barbuda">🇦🇬 Antigua and Barbuda</div>
+                      <div class="dropdown-option" data-value="Argentina">🇦🇷 Argentina</div>
+                      <div class="dropdown-option" data-value="Armenia">🇦🇲 Armenia</div>
+                      <div class="dropdown-option" data-value="Australia">🇦🇺 Australia</div>
+                      <div class="dropdown-option" data-value="Austria">🇦🇹 Austria</div>
+                      <div class="dropdown-option" data-value="Azerbaijan">🇦🇿 Azerbaijan</div>
+                      <div class="dropdown-option" data-value="Bahamas">🇧🇸 Bahamas</div>
+                      <div class="dropdown-option" data-value="Bahrain">🇧🇭 Bahrain</div>
+                      <div class="dropdown-option" data-value="Bangladesh">🇧🇩 Bangladesh</div>
+                      <div class="dropdown-option" data-value="Barbados">🇧🇧 Barbados</div>
+                      <div class="dropdown-option" data-value="Belarus">🇧🇾 Belarus</div>
+                      <div class="dropdown-option" data-value="Belgium">🇧🇪 Belgium</div>
+                      <div class="dropdown-option" data-value="Belize">🇧🇿 Belize</div>
+                      <div class="dropdown-option" data-value="Benin">🇧🇯 Benin</div>
+                      <div class="dropdown-option" data-value="Bhutan">🇧🇹 Bhutan</div>
+                      <div class="dropdown-option" data-value="Bolivia">🇧🇴 Bolivia</div>
+                      <div class="dropdown-option" data-value="Bosnia and Herzegovina">🇧🇦 Bosnia and Herzegovina</div>
+                      <div class="dropdown-option" data-value="Botswana">🇧🇼 Botswana</div>
+                      <div class="dropdown-option" data-value="Brazil">🇧🇷 Brazil</div>
+                      <div class="dropdown-option" data-value="Brunei">🇧🇳 Brunei</div>
+                      <div class="dropdown-option" data-value="Bulgaria">🇧🇬 Bulgaria</div>
+                      <div class="dropdown-option" data-value="Burkina Faso">🇧🇫 Burkina Faso</div>
+                      <div class="dropdown-option" data-value="Burundi">🇧🇮 Burundi</div>
+                      <div class="dropdown-option" data-value="Cambodia">🇰🇭 Cambodia</div>
+                      <div class="dropdown-option" data-value="Cameroon">🇨🇲 Cameroon</div>
+                      <div class="dropdown-option" data-value="Canada">🇨🇦 Canada</div>
+                      <div class="dropdown-option" data-value="Cape Verde">🇨🇻 Cape Verde</div>
+                      <div class="dropdown-option" data-value="Central African Republic">🇨🇫 Central African Republic</div>
+                      <div class="dropdown-option" data-value="Chad">🇹🇩 Chad</div>
+                      <div class="dropdown-option" data-value="Chile">🇨🇱 Chile</div>
+                      <div class="dropdown-option" data-value="China">🇨🇳 China</div>
+                      <div class="dropdown-option" data-value="Colombia">🇨🇴 Colombia</div>
+                      <div class="dropdown-option" data-value="Comoros">🇰🇲 Comoros</div>
+                      <div class="dropdown-option" data-value="Congo">🇨🇬 Congo</div>
+                      <div class="dropdown-option" data-value="Costa Rica">🇨🇷 Costa Rica</div>
+                      <div class="dropdown-option" data-value="Croatia">🇭🇷 Croatia</div>
+                      <div class="dropdown-option" data-value="Cuba">🇨🇺 Cuba</div>
+                      <div class="dropdown-option" data-value="Cyprus">🇨🇾 Cyprus</div>
+                      <div class="dropdown-option" data-value="Czech Republic">🇨🇿 Czech Republic</div>
+                      <div class="dropdown-option" data-value="Denmark">🇩🇰 Denmark</div>
+                      <div class="dropdown-option" data-value="Djibouti">🇩🇯 Djibouti</div>
+                      <div class="dropdown-option" data-value="Dominica">🇩🇲 Dominica</div>
+                      <div class="dropdown-option" data-value="Dominican Republic">🇩🇴 Dominican Republic</div>
+                      <div class="dropdown-option" data-value="DR Congo">🇨🇩 DR Congo</div>
+                      <div class="dropdown-option" data-value="Ecuador">🇪🇨 Ecuador</div>
+                      <div class="dropdown-option" data-value="Egypt">🇪🇬 Egypt</div>
+                      <div class="dropdown-option" data-value="El Salvador">🇸🇻 El Salvador</div>
+                      <div class="dropdown-option" data-value="Equatorial Guinea">🇬🇶 Equatorial Guinea</div>
+                      <div class="dropdown-option" data-value="Eritrea">🇪🇷 Eritrea</div>
+                      <div class="dropdown-option" data-value="Estonia">🇪🇪 Estonia</div>
+                      <div class="dropdown-option" data-value="Eswatini">🇸🇿 Eswatini</div>
+                      <div class="dropdown-option" data-value="Ethiopia">🇪🇹 Ethiopia</div>
+                      <div class="dropdown-option" data-value="Fiji">🇫🇯 Fiji</div>
+                      <div class="dropdown-option" data-value="Finland">🇫🇮 Finland</div>
+                      <div class="dropdown-option" data-value="France">🇫🇷 France</div>
+                      <div class="dropdown-option" data-value="Gabon">🇬🇦 Gabon</div>
+                      <div class="dropdown-option" data-value="Gambia">🇬🇲 Gambia</div>
+                      <div class="dropdown-option" data-value="Georgia">🇬🇪 Georgia</div>
+                      <div class="dropdown-option" data-value="Germany">🇩🇪 Germany</div>
+                      <div class="dropdown-option" data-value="Ghana">🇬🇭 Ghana</div>
+                      <div class="dropdown-option" data-value="Greece">🇬🇷 Greece</div>
+                      <div class="dropdown-option" data-value="Grenada">🇬🇩 Grenada</div>
+                      <div class="dropdown-option" data-value="Guatemala">🇬🇹 Guatemala</div>
+                      <div class="dropdown-option" data-value="Guinea">🇬🇳 Guinea</div>
+                      <div class="dropdown-option" data-value="Guinea-Bissau">🇬🇼 Guinea-Bissau</div>
+                      <div class="dropdown-option" data-value="Guyana">🇬🇾 Guyana</div>
+                      <div class="dropdown-option" data-value="Haiti">🇭🇹 Haiti</div>
+                      <div class="dropdown-option" data-value="Honduras">🇭🇳 Honduras</div>
+                      <div class="dropdown-option" data-value="Hungary">🇭🇺 Hungary</div>
+                      <div class="dropdown-option" data-value="Iceland">🇮🇸 Iceland</div>
+                      <div class="dropdown-option" data-value="India">🇮🇳 India</div>
+                      <div class="dropdown-option" data-value="Indonesia">🇮🇩 Indonesia</div>
+                      <div class="dropdown-option" data-value="Iran">🇮🇷 Iran</div>
+                      <div class="dropdown-option" data-value="Iraq">🇮🇶 Iraq</div>
+                      <div class="dropdown-option" data-value="Ireland">🇮🇪 Ireland</div>
+                      <div class="dropdown-option" data-value="Israel">🇮🇱 Israel</div>
+                      <div class="dropdown-option" data-value="Italy">🇮🇹 Italy</div>
+                      <div class="dropdown-option" data-value="Ivory Coast">🇨🇮 Ivory Coast</div>
+                      <div class="dropdown-option" data-value="Jamaica">🇯🇲 Jamaica</div>
+                      <div class="dropdown-option" data-value="Japan">🇯🇵 Japan</div>
+                      <div class="dropdown-option" data-value="Jordan">🇯🇴 Jordan</div>
+                      <div class="dropdown-option" data-value="Kazakhstan">🇰🇿 Kazakhstan</div>
+                      <div class="dropdown-option" data-value="Kenya">🇰🇪 Kenya</div>
+                      <div class="dropdown-option" data-value="Kiribati">🇰🇮 Kiribati</div>
+                      <div class="dropdown-option" data-value="Kosovo">🇽🇰 Kosovo</div>
+                      <div class="dropdown-option" data-value="Kuwait">🇰🇼 Kuwait</div>
+                      <div class="dropdown-option" data-value="Kyrgyzstan">🇰🇬 Kyrgyzstan</div>
+                      <div class="dropdown-option" data-value="Laos">🇱🇦 Laos</div>
+                      <div class="dropdown-option" data-value="Latvia">🇱🇻 Latvia</div>
+                      <div class="dropdown-option" data-value="Lebanon">🇱🇧 Lebanon</div>
+                      <div class="dropdown-option" data-value="Lesotho">🇱🇸 Lesotho</div>
+                      <div class="dropdown-option" data-value="Liberia">🇱🇷 Liberia</div>
+                      <div class="dropdown-option" data-value="Libya">🇱🇾 Libya</div>
+                      <div class="dropdown-option" data-value="Liechtenstein">🇱🇮 Liechtenstein</div>
+                      <div class="dropdown-option" data-value="Lithuania">🇱🇹 Lithuania</div>
+                      <div class="dropdown-option" data-value="Luxembourg">🇱🇺 Luxembourg</div>
+                      <div class="dropdown-option" data-value="Madagascar">🇲🇬 Madagascar</div>
+                      <div class="dropdown-option" data-value="Malawi">🇲🇼 Malawi</div>
+                      <div class="dropdown-option" data-value="Malaysia">🇲🇾 Malaysia</div>
+                      <div class="dropdown-option" data-value="Maldives">🇲🇻 Maldives</div>
+                      <div class="dropdown-option" data-value="Mali">🇲🇱 Mali</div>
+                      <div class="dropdown-option" data-value="Malta">🇲🇹 Malta</div>
+                      <div class="dropdown-option" data-value="Marshall Islands">🇲🇭 Marshall Islands</div>
+                      <div class="dropdown-option" data-value="Mauritania">🇲🇷 Mauritania</div>
+                      <div class="dropdown-option" data-value="Mauritius">🇲🇺 Mauritius</div>
+                      <div class="dropdown-option" data-value="Mexico">🇲🇽 Mexico</div>
+                      <div class="dropdown-option" data-value="Micronesia">🇫🇲 Micronesia</div>
+                      <div class="dropdown-option" data-value="Moldova">🇲🇩 Moldova</div>
+                      <div class="dropdown-option" data-value="Monaco">🇲🇨 Monaco</div>
+                      <div class="dropdown-option" data-value="Mongolia">🇲🇳 Mongolia</div>
+                      <div class="dropdown-option" data-value="Montenegro">🇲🇪 Montenegro</div>
+                      <div class="dropdown-option" data-value="Morocco">🇲🇦 Morocco</div>
+                      <div class="dropdown-option" data-value="Mozambique">🇲🇿 Mozambique</div>
+                      <div class="dropdown-option" data-value="Myanmar">🇲🇲 Myanmar</div>
+                      <div class="dropdown-option" data-value="Namibia">🇳🇦 Namibia</div>
+                      <div class="dropdown-option" data-value="Nauru">🇳🇷 Nauru</div>
+                      <div class="dropdown-option" data-value="Nepal">🇳🇵 Nepal</div>
+                      <div class="dropdown-option" data-value="Netherlands">🇳🇱 Netherlands</div>
+                      <div class="dropdown-option" data-value="New Zealand">🇳🇿 New Zealand</div>
+                      <div class="dropdown-option" data-value="Nicaragua">🇳🇮 Nicaragua</div>
+                      <div class="dropdown-option" data-value="Niger">🇳🇪 Niger</div>
+                      <div class="dropdown-option" data-value="Nigeria">🇳🇬 Nigeria</div>
+                      <div class="dropdown-option" data-value="North Korea">🇰🇵 North Korea</div>
+                      <div class="dropdown-option" data-value="North Macedonia">🇲🇰 North Macedonia</div>
+                      <div class="dropdown-option" data-value="Norway">🇳🇴 Norway</div>
+                      <div class="dropdown-option" data-value="Oman">🇴🇲 Oman</div>
+                      <div class="dropdown-option" data-value="Pakistan">🇵🇰 Pakistan</div>
+                      <div class="dropdown-option" data-value="Palau">🇵🇼 Palau</div>
+                      <div class="dropdown-option" data-value="Palestine">🇵🇸 Palestine</div>
+                      <div class="dropdown-option" data-value="Panama">🇵🇦 Panama</div>
+                      <div class="dropdown-option" data-value="Papua New Guinea">🇵🇬 Papua New Guinea</div>
+                      <div class="dropdown-option" data-value="Paraguay">🇵🇾 Paraguay</div>
+                      <div class="dropdown-option" data-value="Peru">🇵🇪 Peru</div>
+                      <div class="dropdown-option" data-value="Philippines">🇵🇭 Philippines</div>
+                      <div class="dropdown-option" data-value="Poland">🇵🇱 Poland</div>
+                      <div class="dropdown-option" data-value="Portugal">🇵🇹 Portugal</div>
+                      <div class="dropdown-option" data-value="Qatar">🇶🇦 Qatar</div>
+                      <div class="dropdown-option" data-value="Romania">🇷🇴 Romania</div>
+                      <div class="dropdown-option" data-value="Russia">🇷🇺 Russia</div>
+                      <div class="dropdown-option" data-value="Rwanda">🇷🇼 Rwanda</div>
+                      <div class="dropdown-option" data-value="Saint Kitts and Nevis">🇰🇳 Saint Kitts and Nevis</div>
+                      <div class="dropdown-option" data-value="Saint Lucia">🇱🇨 Saint Lucia</div>
+                      <div class="dropdown-option" data-value="Saint Vincent and the Grenadines">🇻🇨 Saint Vincent and the Grenadines</div>
+                      <div class="dropdown-option" data-value="Samoa">🇼🇸 Samoa</div>
+                      <div class="dropdown-option" data-value="San Marino">🇸🇲 San Marino</div>
+                      <div class="dropdown-option" data-value="Sao Tome and Principe">🇸🇹 Sao Tome and Principe</div>
+                      <div class="dropdown-option" data-value="Saudi Arabia">🇸🇦 Saudi Arabia</div>
+                      <div class="dropdown-option" data-value="Senegal">🇸🇳 Senegal</div>
+                      <div class="dropdown-option" data-value="Serbia">🇷🇸 Serbia</div>
+                      <div class="dropdown-option" data-value="Seychelles">🇸🇨 Seychelles</div>
+                      <div class="dropdown-option" data-value="Sierra Leone">🇸🇱 Sierra Leone</div>
+                      <div class="dropdown-option" data-value="Singapore">🇸🇬 Singapore</div>
+                      <div class="dropdown-option" data-value="Slovakia">🇸🇰 Slovakia</div>
+                      <div class="dropdown-option" data-value="Slovenia">🇸🇮 Slovenia</div>
+                      <div class="dropdown-option" data-value="Solomon Islands">🇸🇧 Solomon Islands</div>
+                      <div class="dropdown-option" data-value="Somalia">🇸🇴 Somalia</div>
+                      <div class="dropdown-option" data-value="South Africa">🇿🇦 South Africa</div>
+                      <div class="dropdown-option" data-value="South Korea">🇰🇷 South Korea</div>
+                      <div class="dropdown-option" data-value="South Sudan">🇸🇸 South Sudan</div>
+                      <div class="dropdown-option" data-value="Spain">🇪🇸 Spain</div>
+                      <div class="dropdown-option" data-value="Sri Lanka">🇱🇰 Sri Lanka</div>
+                      <div class="dropdown-option" data-value="Sudan">🇸🇩 Sudan</div>
+                      <div class="dropdown-option" data-value="Suriname">🇸🇷 Suriname</div>
+                      <div class="dropdown-option" data-value="Sweden">🇸🇪 Sweden</div>
+                      <div class="dropdown-option" data-value="Switzerland">🇨🇭 Switzerland</div>
+                      <div class="dropdown-option" data-value="Syria">🇸🇾 Syria</div>
+                      <div class="dropdown-option" data-value="Taiwan">🇹🇼 Taiwan</div>
+                      <div class="dropdown-option" data-value="Tajikistan">🇹🇯 Tajikistan</div>
+                      <div class="dropdown-option" data-value="Tanzania">🇹🇿 Tanzania</div>
+                      <div class="dropdown-option" data-value="Thailand">🇹🇭 Thailand</div>
+                      <div class="dropdown-option" data-value="Timor-Leste">🇹🇱 Timor-Leste</div>
+                      <div class="dropdown-option" data-value="Togo">🇹🇬 Togo</div>
+                      <div class="dropdown-option" data-value="Tonga">🇹🇴 Tonga</div>
+                      <div class="dropdown-option" data-value="Trinidad and Tobago">🇹🇹 Trinidad and Tobago</div>
+                      <div class="dropdown-option" data-value="Tunisia">🇹🇳 Tunisia</div>
+                      <div class="dropdown-option" data-value="Turkey">🇹🇷 Turkey</div>
+                      <div class="dropdown-option" data-value="Turkmenistan">🇹🇲 Turkmenistan</div>
+                      <div class="dropdown-option" data-value="Tuvalu">🇹🇻 Tuvalu</div>
+                      <div class="dropdown-option" data-value="Uganda">🇺🇬 Uganda</div>
+                      <div class="dropdown-option" data-value="Ukraine">🇺🇦 Ukraine</div>
+                      <div class="dropdown-option" data-value="United Arab Emirates">🇦🇪 United Arab Emirates</div>
+                      <div class="dropdown-option" data-value="United Kingdom">🇬🇧 United Kingdom</div>
+                      <div class="dropdown-option" data-value="United States">🇺🇸 United States</div>
+                      <div class="dropdown-option" data-value="Uruguay">🇺🇾 Uruguay</div>
+                      <div class="dropdown-option" data-value="Uzbekistan">🇺🇿 Uzbekistan</div>
+                      <div class="dropdown-option" data-value="Vanuatu">🇻🇺 Vanuatu</div>
+                      <div class="dropdown-option" data-value="Vatican City">🇻🇦 Vatican City</div>
+                      <div class="dropdown-option" data-value="Venezuela">🇻🇪 Venezuela</div>
+                      <div class="dropdown-option" data-value="Vietnam">🇻🇳 Vietnam</div>
+                      <div class="dropdown-option" data-value="Yemen">🇾🇪 Yemen</div>
+                      <div class="dropdown-option" data-value="Zambia">🇿🇲 Zambia</div>
+                      <div class="dropdown-option" data-value="Zimbabwe">🇿🇼 Zimbabwe</div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="countryFilter" value="any">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connect Button -->
+          <div class="connect-btn-wrapper">
+            <button id="start" class="primary-btn large-btn"><i class="fas fa-video"></i> Connect with a Stranger</button>
+          </div>
+        </div>
+
+        <!-- Banner Ad Space -->
+        <div class="ad-banner-container">
+          <div class="ad-label">Advertisement</div>
+          <div id="adsterraContainer" class="adsterra-banner">
+            <!-- Adsterra banner code will be inserted here -->
+            <div class="ad-placeholder">
+              <i class="fas fa-ad"></i>
+              <p>728x90 Banner Ad</p>
+              <small>Adsterra Ad Space</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="rewards-section">
+        <div class="rewards-header">
+          <h2><i class="fas fa-gift"></i> Earn Free Tokens</h2>
+          <p>Watch ads to earn tokens and unlock premium features</p>
+        </div>
+        <div class="rewards-grid">
+          <div class="reward-card">
+            <div class="reward-icon">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <h3>Watch Video Ad</h3>
+            <div class="reward-tokens">+5 <i class="fas fa-coins"></i></div>
+            <p>Watch a 30-second video</p>
+            <button class="reward-btn" onclick="watchAd('video')">
+              <i class="fas fa-play"></i> Watch Now
+            </button>
+          </div>
+          <div class="reward-card">
+            <div class="reward-icon">
+              <i class="fas fa-ad"></i>
+            </div>
+            <h3>View Banner Ad</h3>
+            <div class="reward-tokens">+2 <i class="fas fa-coins"></i></div>
+            <p>View a banner for 10 seconds</p>
+            <button class="reward-btn" onclick="watchAd('banner')">
+              <i class="fas fa-eye"></i> View Now
+            </button>
+          </div>
+          <div class="reward-card">
+            <div class="reward-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Daily Bonus</h3>
+            <div class="reward-tokens">+10 <i class="fas fa-coins"></i></div>
+            <p>Login daily to claim bonus</p>
+            <button class="reward-btn" onclick="claimDaily()">
+              <i class="fas fa-gift"></i> Claim
+            </button>
+          </div>
+        </div>
+        <div class="token-info">
+          <h3>What can you do with tokens?</h3>
+          <ul>
+            <li><i class="fas fa-check"></i> Choose gender preferences (10 tokens/chat)</li>
+            <li><i class="fas fa-check"></i> Select country/region (5 tokens/chat)</li>
+            <li><i class="fas fa-check"></i> Remove ads completely (50 tokens/month)</li>
+            <li><i class="fas fa-check"></i> Priority matching (3 tokens/chat)</li>
+          </ul>
+        </div>
+
+      </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="home-footer">
+        <div class="footer-links">
+          <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+          <a href="/privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="/terms"><i class="fas fa-file-contract"></i> Terms of Service</a>
+        </div>
+        <p>&copy; 2025 WanTok. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile" class="profile-page" style="display: none;">
+      <header class="profile-header">
+        <button id="backToHome" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+        <h1>Profile</h1>
+        <div class="token-display">
+          <i class="fas fa-coins"></i>
+          <span id="profileTokenCount">0</span>
+        </div>
+      </header>
+
+      <div class="profile-content">
+        <!-- Profile Avatar Section -->
+        <div class="profile-avatar-section">
+          <div class="avatar-container">
+            <div class="avatar-circle">
+              <i class="fas fa-user"></i>
+            </div>
+            <button class="edit-avatar-btn"><i class="fas fa-camera"></i></button>
+          </div>
+          <div class="profile-name-section">
+            <h2 id="profileFullName">John Doe</h2>
+            <button class="edit-name-btn" data-field="fullName"><i class="fas fa-edit"></i></button>
+          </div>
+          <div class="profile-username-section">
+            <p id="profileUsername">@johndoe</p>
+            <button class="edit-username-btn" data-field="username"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Profile Stats -->
+        <div class="profile-stats">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-comments"></i></div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Total Chats</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-value">0h</div>
+            <div class="stat-label">Time Spent</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-coins"></i></div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Tokens Earned</div>
+          </div>
+        </div>
+
+        <!-- Profile Information -->
+        <div class="profile-settings">
+          <h3><i class="fas fa-user"></i> Personal Information</h3>
+
+          <div class="setting-item view-only">
+            <div class="setting-info">
+              <i class="fas fa-venus-mars"></i>
+              <div>
+                <div class="setting-title">Gender</div>
+                <div class="setting-desc">Not specified</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-birthday-cake"></i>
+              <div>
+                <div class="setting-title">Age</div>
+                <div class="setting-desc">25 years old (DOB: 01/01/2000)</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="age"><i class="fas fa-edit"></i></button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-globe"></i>
+              <div>
+                <div class="setting-title">Country</div>
+                <div class="setting-desc">Not specified</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="country"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Account Settings -->
+        <div class="profile-settings">
+          <h3><i class="fas fa-cog"></i> Account Settings</h3>
+
+          <div class="setting-item view-only">
+            <div class="setting-info">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <div class="setting-title">Email</div>
+                <div class="setting-desc">guest@example.com</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <i class="fas fa-lock"></i>
+              <div>
+                <div class="setting-title">Password</div>
+                <div class="setting-desc">Change your password</div>
+              </div>
+            </div>
+            <button class="setting-btn" data-field="password"><i class="fas fa-edit"></i></button>
+          </div>
+        </div>
+
+        <!-- Preferences -->
+        <div class="profile-preferences">
+          <h3><i class="fas fa-sliders-h"></i> Preferences</h3>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-bell"></i>
+              <div>
+                <div class="preference-title">Notifications</div>
+                <div class="preference-desc">Enable push notifications</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="notificationsToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-volume-up"></i>
+              <div>
+                <div class="preference-title">Sound Effects</div>
+                <div class="preference-desc">Chat notification sounds</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="soundToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="preference-item">
+            <div class="preference-info">
+              <i class="fas fa-eye-slash"></i>
+              <div>
+                <div class="preference-title">Private Mode</div>
+                <div class="preference-desc">Hide your online status</div>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="privateModeToggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Edit Field</h3>
+          <button class="modal-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label id="modalLabel">Value</label>
+            <input type="text" id="modalInput" class="form-input" placeholder="Enter value">
+            <input type="text" id="searchInput" class="form-input search-input" placeholder="Search..." style="display: none;">
+            <select id="modalSelect" class="form-select" style="display: none;" size="8">
+              <!-- Options will be populated dynamically -->
+            </select>
+            <!-- Date of Birth Input -->
+            <input type="text" id="dateInput" class="form-input date-manual-input" placeholder="MM/DD/YYYY" maxlength="10" style="display: none;">
+            <!-- Custom Calendar Picker -->
+            <div id="customCalendar" class="custom-calendar" style="display: none;">
+              <div class="calendar-header">
+                <button type="button" class="calendar-nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <div class="calendar-selectors">
+                  <select id="calendarMonthSelect" class="calendar-select" size="1"></select>
+                  <select id="calendarYearSelect" class="calendar-select" size="1"></select>
+                </div>
+                <button type="button" class="calendar-nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              <div class="calendar-weekdays">
+                <div class="calendar-weekday">Su</div>
+                <div class="calendar-weekday">Mo</div>
+                <div class="calendar-weekday">Tu</div>
+                <div class="calendar-weekday">We</div>
+                <div class="calendar-weekday">Th</div>
+                <div class="calendar-weekday">Fr</div>
+                <div class="calendar-weekday">Sa</div>
+              </div>
+              <div class="calendar-days" id="calendarDays">
+                <!-- Days will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn cancel-btn">Cancel</button>
+          <button class="modal-btn save-btn">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="status" style="display: none;">Searching for a stranger...</div>
+    <div id="chat" class="chat-page" style="display: none;">
+      <div class="chat-container">
+        <!-- Video Section -->
+        <div class="video-section">
+          <div class="video-card local-card">
+            <div class="video-header">
+              <span class="video-label">You</span>
+              <span class="token-balance" id="chatTokenBalance">
+                <i class="fas fa-coins"></i> <span id="chatTokenCount">0</span>
+              </span>
+            </div>
+            <div class="video-wrapper">
+              <video id="localVideo" autoplay playsinline muted></video>
+            </div>
+          </div>
+          <div class="video-card remote-card">
+            <div class="video-header">
+              <div class="video-info">
+                <span class="video-label" id="partnerName">Stranger</span>
+                <div class="video-metadata">
+                  <span class="partner-age" id="partnerAge"></span>
+                  <span class="gender-icon" id="partnerGender"></span>
+                  <span class="country-info" id="partnerCountry"></span>
+                </div>
+              </div>
+            </div>
+            <div class="video-wrapper" id="videoContainer">
+              <video id="remoteVideo" autoplay playsinline></video>
+              <div class="video-controls-overlay" id="videoControlsOverlay">
+                <div class="media-controls-vertical">
+                  <button id="toggleVideoOverlay" class="control-btn toggle-video-btn" title="Toggle Video"><i class="fas fa-video"></i></button>
+                  <button id="toggleAudioOverlay" class="control-btn toggle-audio-btn" title="Toggle Audio"><i class="fas fa-microphone"></i></button>
+                  <button id="switchCameraOverlay" class="control-btn switch-camera-btn" title="Switch Camera"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <div class="action-controls">
+                  <button id="reportOverlay" class="report-btn report-user-btn"><i class="fas fa-flag"></i></button>
+                  <button id="skipOverlay" class="skip-btn skip-chat-btn"><i class="fas fa-forward"></i> Skip</button>
+                  <button id="endChatOverlay" class="end-btn end-chat-btn"><i class="fas fa-times"></i> End</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages Section -->
+        <div class="messages-section">
+          <div class="messages-header">
+            <button id="toggleMessages" class="toggle-messages-btn" title="Hide Messages">
+              <i class="fas fa-eye-slash"></i>
+            </button>
+          </div>
+          <div id="messages" class="messages-container"></div>
+        </div>
+      </div>
+
+      <!-- Floating Action Buttons (Mobile Only) -->
+      <div class="floating-actions">
+        <!-- Keyboard FAB - shows when input is hidden -->
+        <button id="toggleInputFab" class="fab-btn fab-keyboard" title="Type Message">
+          <i class="fas fa-keyboard"></i>
+        </button>
+        <!-- Close FAB - shows when input is visible -->
+        <button id="closeInputFab" class="fab-btn fab-close" style="display: none;" title="Close Input">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Bottom Controls -->
+      <div class="bottom-controls collapsed">
+        <!-- Desktop Controls Structure -->
+        <div class="media-controls desktop-controls">
+          <button id="toggleVideoBottom" class="control-btn toggle-video-btn"><i class="fas fa-video"></i></button>
+          <button id="toggleAudioBottom" class="control-btn toggle-audio-btn"><i class="fas fa-microphone"></i></button>
+          <button id="switchCameraBottom" class="control-btn switch-camera-btn"><i class="fas fa-sync-alt"></i></button>
+        </div>
+
+        <!-- Chat Controls (Desktop & Mobile) -->
+        <div class="chat-controls">
+          <button id="toggleMessagesBottom" class="toggle-messages-input-btn" title="Show Messages">
+            <i class="fas fa-comment"></i>
+          </button>
+          <input id="input" type="text" placeholder="Type your message...">
+          <button id="send" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+
+        <!-- Action Controls (Desktop) -->
+        <div class="action-controls desktop-controls">
+          <button id="reportBottom" class="report-btn report-user-btn"><i class="fas fa-flag"></i></button>
+          <button id="skipBottom" class="skip-btn skip-chat-btn"><i class="fas fa-forward"></i> Skip</button>
+          <button id="endChatBottom" class="end-btn end-chat-btn"><i class="fas fa-times"></i> End</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Report User</h3>
+          <button class="modal-close" id="closeReportModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <p>Why are you reporting this user?</p>
+          <div class="report-reasons">
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="inappropriate">
+              <span>Inappropriate behavior</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="spam">
+              <span>Spam or advertising</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="harassment">
+              <span>Harassment or bullying</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="nudity">
+              <span>Nudity or sexual content</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="violence">
+              <span>Violence or threats</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="reportReason" value="other">
+              <span>Other</span>
+            </label>
+          </div>
+          <textarea id="reportDetails" class="report-textarea" placeholder="Additional details (optional)..." rows="3"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn cancel-btn" id="cancelReport">Cancel</button>
+          <button class="modal-btn save-btn" id="submitReport">Submit Report</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Out of Tokens Modal -->
+    <div id="outOfTokensModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-coins"></i> Out of Tokens</h3>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+          <div style="font-size: 3rem; margin: 20px 0;">
+            <i class="fas fa-exclamation-triangle" style="color: #ff9800;"></i>
+          </div>
+          <p style="font-size: 1.1rem; margin-bottom: 20px;">
+            You've run out of tokens! Filters are currently active and cost tokens to use.
+          </p>
+          <p style="margin-bottom: 30px;">
+            Would you like to purchase more tokens or continue with free connections (no filters)?
+          </p>
+        </div>
+        <div class="modal-footer" style="display: flex; gap: 10px; justify-content: center;">
+          <button class="modal-btn cancel-btn" id="continueWithoutFilters" style="flex: 1;">
+            <i class="fas fa-users"></i> Continue Without Filters
+          </button>
+          <button class="modal-btn save-btn" id="purchaseTokensBtn" style="flex: 1;">
+            <i class="fas fa-shopping-cart"></i> Buy Tokens
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/socket-shared.js"></script>
+  <script src="/assets/js/moderation.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

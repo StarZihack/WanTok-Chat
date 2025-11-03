@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Online Users - WanTok</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <!-- Online Users Page -->
+    <div class="online-users-page">
+      <header class="page-header">
+        <button id="backFromOnline" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+        <h1><i class="fas fa-users"></i> Online Users</h1>
+        <div class="online-count-badge">
+          <i class="fas fa-circle"></i>
+          <span id="totalOnline">0</span>
+        </div>
+      </header>
+
+      <div class="online-content">
+        <!-- Summary Cards -->
+        <div class="stats-summary">
+          <div class="stat-card total-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value" id="totalUsers">0</div>
+              <div class="stat-label">Total Online</div>
+            </div>
+          </div>
+
+          <div class="stat-card male-card">
+            <div class="stat-icon">
+              <i class="fas fa-mars"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value" id="maleUsers">0</div>
+              <div class="stat-label">Male</div>
+            </div>
+          </div>
+
+          <div class="stat-card female-card">
+            <div class="stat-icon">
+              <i class="fas fa-venus"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value" id="femaleUsers">0</div>
+              <div class="stat-label">Female</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender Distribution Chart -->
+        <div class="stats-section">
+          <h2><i class="fas fa-chart-pie"></i> Gender Distribution</h2>
+          <div class="gender-chart">
+            <div class="chart-bar">
+              <div class="bar-label">
+                <i class="fas fa-mars"></i> Male
+              </div>
+              <div class="bar-container">
+                <div class="bar-fill male-bar" id="maleBar" style="width: 0%">
+                  <span class="bar-percentage" id="malePercentage">0%</span>
+                </div>
+              </div>
+            </div>
+            <div class="chart-bar">
+              <div class="bar-label">
+                <i class="fas fa-venus"></i> Female
+              </div>
+              <div class="bar-container">
+                <div class="bar-fill female-bar" id="femaleBar" style="width: 0%">
+                  <span class="bar-percentage" id="femalePercentage">0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country Distribution -->
+        <div class="stats-section">
+          <h2><i class="fas fa-globe"></i> Users by Country</h2>
+          <div class="country-list" id="countryList">
+            <!-- Countries will be populated by JavaScript -->
+            <div class="loading-indicator">
+              <i class="fas fa-spinner fa-spin"></i> Loading statistics...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/socket-shared.js"></script>
+  <script src="/assets/js/online-users.js"></script>
+</body>
+</html>

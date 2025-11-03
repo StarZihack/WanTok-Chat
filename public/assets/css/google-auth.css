@@ -1,0 +1,194 @@
+/* Google Authentication Styles */
+
+/* Fix auth container to fit browser window without overflow */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.auth-container {
+  max-height: calc(100vh - 30px);
+  padding: 30px !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Compact spacing for auth forms */
+.auth-logo {
+  margin-bottom: 20px !important;
+}
+
+.auth-logo i {
+  font-size: 3rem !important;
+  margin-bottom: 8px !important;
+}
+
+.auth-logo h1 {
+  font-size: 1.8rem !important;
+  margin: 8px 0 !important;
+}
+
+.auth-logo p {
+  font-size: 0.9rem !important;
+  margin: 5px 0 0 !important;
+}
+
+.auth-tabs {
+  margin-bottom: 20px !important;
+}
+
+.auth-form {
+  gap: 12px !important;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.auth-form::-webkit-scrollbar {
+  width: 5px;
+}
+
+.auth-form::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.6) 0%, rgba(159, 103, 224, 0.6) 100%);
+  border-radius: 10px;
+}
+
+.auth-form::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.9) 0%, rgba(159, 103, 224, 0.9) 100%);
+}
+
+.auth-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox scrollbar styling */
+.auth-form {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(187, 134, 252, 0.6) transparent;
+}
+
+/* Input with icon container */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bb86fc;
+  font-size: 1.1rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+  padding-left: 48px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make auth form inputs longer and responsive */
+.auth-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.auth-form input,
+.auth-form select,
+.auth-form .form-select {
+  width: 100% !important;
+  min-width: 280px;
+  box-sizing: border-box;
+  padding: 12px 16px !important;
+}
+
+.auth-form .input-with-icon input,
+.auth-form .input-with-icon select {
+  padding: 12px 16px 12px 48px !important;
+}
+
+.auth-btn,
+.google-auth-btn {
+  padding: 12px 30px !important;
+  margin-top: 5px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .input-with-icon input,
+  .input-with-icon select,
+  .auth-form input,
+  .auth-form select,
+  .auth-form .form-select {
+    min-width: 100%;
+  }
+}
+
+.auth-form .auth-divider {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin: 15px 0 !important;
+  width: 100% !important;
+}
+
+.auth-form .auth-divider .divider-line {
+  height: 1px !important;
+  background: rgba(187, 134, 252, 0.3) !important;
+  width: 100% !important;
+}
+
+.auth-form .auth-divider span {
+  color: rgba(207, 207, 207, 0.7) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+.google-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 30px;
+  background: #ffffff;
+  color: #444;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.google-auth-btn:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.google-auth-btn:active {
+  transform: translateY(0);
+}
+
+.google-auth-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}

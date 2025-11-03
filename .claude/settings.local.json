@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start /B node server.js)",
+      "Bash(findstr:*)",
+      "Bash(dir:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(timeout:*)",
+      "Bash(start http://localhost:3000)",
+      "Read(//c/**)",
+      "Bash(tasklist:*)",
+      "Bash(cmd.exe /c \"taskkill /F /PID 36248\")",
+      "Bash(lsof:*)",
+      "Bash(cmd.exe /c \"taskkill /F /PID 24344\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 15108\")",
+      "Bash(Get-Content \"c:\\WanTok\\.env\")",
+      "Bash(Select-String \"SUPABASE\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 44292\")",
+      "Bash(powershell -Command \"Stop-Process -Id 44292 -Force\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 37544\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 30708\")",
+      "Bash(powershell -Command \"Stop-Process -Id 30708 -Force\")",
+      "Bash(powershell -Command \"Stop-Process -Id 60544 -Force\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

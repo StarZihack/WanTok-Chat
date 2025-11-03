@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Age Verification - WanTok</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <!-- Age Verification Page -->
+    <div class="verify-page">
+      <div class="verify-container">
+        <div class="verify-logo">
+          <i class="fas fa-shield-alt"></i>
+          <h1>Age Verification</h1>
+          <p>Please confirm you are of legal age to use this site</p>
+        </div>
+
+        <div class="verify-form">
+          <div class="age-notice">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>You must be 18 years or older to use WanTok</p>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-at"></i> Username</label>
+            <input type="text" id="verifyUsername" placeholder="Choose a username" required>
+            <small>This will be your unique identifier</small>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-venus-mars"></i> Gender</label>
+            <select id="verifyGender" class="form-select" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-birthday-cake"></i> Date of Birth</label>
+            <input type="date" id="verifyDOB" class="form-input" required>
+            <small>We need this to verify you are 18+</small>
+          </div>
+
+          <div class="age-checkbox">
+            <label class="checkbox-container">
+              <input type="checkbox" id="agreeCheckbox" required>
+              <span class="checkmark"></span>
+              <span class="checkbox-text">I confirm that I am 18 years of age or older and agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a></span>
+            </label>
+          </div>
+
+          <button id="verifyBtn" class="verify-btn">
+            <i class="fas fa-check-circle"></i> Verify and Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/verify-age.js"></script>
+</body>
+</html>
